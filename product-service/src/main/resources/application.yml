@@ -1,0 +1,33 @@
+server:
+  port: 9091
+
+spring:
+  graphql:
+    path: /graphql
+    graphiql:
+      path: /graphiql
+      enabled: true
+
+  data:
+    mongodb:
+      uri: mongodb+srv://<USER_NAME>:<PASSWORD>@cluster0.eynceip.mongodb.net/?retryWrites=true&w=majority
+      username: <USER_NAME>
+      host: localhost
+      database: dev
+      port: 27017
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.H2Dialect
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG

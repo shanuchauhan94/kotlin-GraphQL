@@ -1,0 +1,42 @@
+type Query {
+    getProductByName(name: String) : [ProductResponse]
+    getManufacturerDetailsByName(name : String) : [ManufacturerResponseDto]
+}
+
+type Mutation{
+    addNewProduct(product : ProductRequestDto) : ProductResponse
+}
+
+input ProductRequestDto {
+    productName: String,
+    productType: String,
+    manufacturer: ManufacturerRequestDto,
+    unitSoldSoFar: Int,
+    price: Int
+}
+
+input ManufacturerRequestDto {
+    manufacturerName: String
+    manufacturerOrigin: String
+    userRatings: Int,
+    noOfProductAvailable: Int
+    annualRevenue: Int
+}
+
+type ProductResponse {
+
+    productName: String,
+    productType: String,
+    manufacturer: ManufacturerResponseDto,
+    unitSoldSoFar: Int,
+    price: Int
+}
+
+type ManufacturerResponseDto {
+
+    manufacturerName: String
+    manufacturerOrigin: String
+    userRatings: Int,
+    noOfProductAvailable: Int
+    annualRevenue: Int
+}
