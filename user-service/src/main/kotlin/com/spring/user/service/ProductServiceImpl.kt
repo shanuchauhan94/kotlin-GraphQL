@@ -24,9 +24,9 @@ class ProductServiceImpl : ProductService {
     lateinit var graphQlClient: HttpGraphQlClient
 
     companion object : KLogging() {
-        const val PRODUCT_SERVICE_ADD_FUNCTION = "/addNewProduct"
-        const val PRODUCT_SERVICE_GET_PRODUCT_FUNCTION = "/getProductByName"
-        const val PRODUCT_SERVICE_GET_MANUFACTURER_FUNCTION = "/getManufacturerDetailsByName"
+        const val PRODUCT_SERVICE_ADD_FUNCTION = "addNewProduct"
+        const val PRODUCT_SERVICE_GET_PRODUCT_FUNCTION = "getProductByName"
+        const val PRODUCT_SERVICE_GET_MANUFACTURER_FUNCTION = "getManufacturerDetailsByName"
     }
 
     override fun addNewProduct(product: ProductRequestDto): ProductRequestDto? {
